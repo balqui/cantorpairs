@@ -27,7 +27,16 @@ for i in range(4):
 
 for i in range(90, 100):
   print(cpt.pr1(i), cpt.pr2(i), cpt.dp(cpt.pr1(i), cpt.pr2(i)), i) 
+```
 
+### Tupling exemples
+
+In order to have unbounded-length tuples, a tuple is either empty (mapped to zero as "nil") or a pair formed by the first element and the rest of the tuple. All this is very traditional in some cultures.
+
+There are two functions that form tuples: in one, `tup_e`, the arguments are **e**xplicitly integers, an arbitrary number of them. 
+In the other, `tup_i`, the single argument is an **i**terable of integers.
+
+```
 t = cpt.tup_e(4, 7, 56, 101)
 while t:
     print(t, cpt.pr1(t))
@@ -38,11 +47,4 @@ while t:
     print(t, cpt.pr1(t))
     t = cpt.pr2(t)
 ```
-
-### Tupling exemples
-
-In order to have unbounded-length tuples, a tuple is either empty (mapped to zero as "nil") or a pair formed by the first element and the rest of the tuple. All this is very traditional in some cultures.
-
-There are two functions that form tuples: in one, `tup_e`, the arguments are **e**xplicitly integers, an arbitrary number of them. 
-In the other, `tup_i`, the single argument is a **i**terable of integers.
 
