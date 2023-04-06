@@ -9,7 +9,7 @@ Pair / unpair functions adapted from https://en.wikipedia.org/wiki/Pairing_funct
 
 from functools import cache
 
-def isqrt(n):
+def _isqrt(n):
     "int square root via binary search"
     def rr(n, k):
         """
@@ -36,7 +36,7 @@ def _unpair(z):
     decoding of dp(10, 10^17) comes out wrong
     '''
     assert z > 0
-    w = (isqrt(8*(z - 1) + 1) - 1)//2
+    w = (_isqrt(8*(z - 1) + 1) - 1)//2
     t = (w*w + w)//2
     x = z - 1 - t
     return x, w - x
