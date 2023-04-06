@@ -3,7 +3,7 @@
 
 Ancillary project for a forthcoming initiative. Implements (a slight variant of) the Cantor pairing function and its projections.
 
-Not pip-installable as of today. Download the source.
+Not pip-installable as of today. Download the source. File src/cantorpairs.py suffices.
 
 Following relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
 
