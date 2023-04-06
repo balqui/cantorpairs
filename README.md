@@ -25,8 +25,18 @@ for i in range(4):
   for j in range(4):
     print(i, j, cpt.dp(i, j))
 
-for i in range(1, 100):
+for i in range(90, 100):
   print(cpt.pr1(i), cpt.pr2(i), cpt.dp(cpt.pr1(i), cpt.pr2(i)), i) 
+
+t = cpt.tup_e(4, 7, 56, 101)
+while t:
+    print(t, cpt.pr1(t))
+    t = cpt.pr2(t)
+
+t = cpt.tup_i(range(8, 16))
+while t:
+    print(t, cpt.pr1(t))
+    t = cpt.pr2(t)
 ```
 
 ### Tupling exemples
