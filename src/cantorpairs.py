@@ -75,6 +75,7 @@ def tup_i(nums):
         t = dp(i, t)
     return t
 
+@cache
 def s_tup(t, k):
     '''
     suffix tuple: t assumed a tuple of at least k components,
