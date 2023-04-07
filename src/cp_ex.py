@@ -7,32 +7,32 @@ First steps towards a Partial Recursive Functions lab.
 Examples of usage of pairing and tupling.
 '''
 
-import cantorpairs as cpt
+import cantorpairs as cp
 
 for i in range(4):
   for j in range(4):
-    print(i, j, cpt.dp(i, j))
+    print(i, j, cp.dp(i, j))
 
 for i in range(90, 100):
-  print(cpt.pr_l(i), cpt.pr_r(i), cpt.dp(cpt.pr_l(i), cpt.pr_r(i)), i) 
+  print(cp.pr_l(i), cp.pr_r(i), cp.dp(cp.pr_l(i), cp.pr_r(i)), i) 
 
-t = cpt.tup_e(4, 7, 56, 101)
+t = cp.tup_e(4, 7, 56, 101)
 for i in range(5):
     'last call is actually out of range'
-    print(cpt.pr(t, i))
+    print(cp.pr(t, i))
 
-st = cpt.s_tup(t, 2)
+st = cp.s_tup(t, 2)
 print(st)
 for i in range(3):
-    print(cpt.pr(st, i))
+    print(cp.pr(st, i))
 
 while t:
-    print(t, cpt.pr_l(t))
-    t = cpt.pr_r(t)
+    print(t, cp.pr_l(t))
+    t = cp.pr_r(t)
 
-t = cpt.tup_i(range(8, 16))
+t = cp.tup_i(range(8, 16))
 while t:
-    print(t, cpt.pr_l(t))
-    t = cpt.pr_r(t)
+    print(t, cp.pr_l(t))
+    t = cp.pr_r(t)
 
 

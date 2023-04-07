@@ -15,7 +15,7 @@ To this end, the natural number zero is used as "nil" and the
 dotted pair is a bijection between `NxN` and `N-{0}`. The formulas
 have been adapted slightly to obtain this bijection.
 
-Functions are defined in file cantorpairs.py whereas file cpt_ex.py 
+Functions are defined in file cantorpairs.py whereas file cp_ex.py 
 contains the examples given below.
 
 ### Pairing examples
@@ -25,17 +25,22 @@ The inverses are the left and right projections `pr_l` (an ell,
 not number 1) and `pr_r`, extended to map to zero for input zero. 
 Thus `dp(pr_l(x), pr_r(x)) == x` if `x != 0`.
 
-For the time being, I import as `cpt` for "cantor pairs and tuples".
+According to <https://import-as.github.io/>, it is infrequent that
+packages are imported `as cp`; the ones that do are `cvxpy`, `copy`,
+`cupy` and `chaospy`: there is no consensus and most of these 
+packages are unlikely to be used in the same project as `cantorpairs`.
+Hence I `import cantorpairs as cp` and suggest importing as `cpt`
+(for "Cantor pairs and tuples") in case of conflict.
 
 ```
-import cantorpairs as cpt
+import cantorpairs as cp
 
 for i in range(4):
   for j in range(4):
-    print(i, j, cpt.dp(i, j))
+    print(i, j, cp.dp(i, j))
 
 for i in range(90, 100):
-  print(cpt.pr_l(i), cpt.pr_r(i), cpt.dp(cpt.pr_l(i), cpt.pr_r(i)), i) 
+  print(cp.pr_l(i), cp.pr_r(i), cp.dp(cp.pr_l(i), cp.pr_r(i)), i) 
 ```
 
 ### Tupling exemples
@@ -55,23 +60,23 @@ general projection function `pr(t, k)` that retrieves the component
 at position `k` (again counting from zero).
 
 ```
-t = cpt.tup_e(4, 7, 56, 101)
+t = cp.tup_e(4, 7, 56, 101)
 for i in range(5):
     'last call is actually out of range'
-    print(cpt.pr(t, i))
+    print(cp.pr(t, i))
 
-st = cpt.s_tup(t, 2)
+st = cp.s_tup(t, 2)
 print(st)
 for i in range(3):
-    print(cpt.pr(st, i))
+    print(cp.pr(st, i))
 
 while t:
-    print(t, cpt.pr1(t))
-    t = cpt.pr2(t)
+    print(t, cp.pr1(t))
+    t = cp.pr2(t)
 
-t = cpt.tup_i(range(8, 16))
+t = cp.tup_i(range(8, 16))
 while t:
-    print(t, cpt.pr1(t))
-    t = cpt.pr2(t)
+    print(t, cp.pr1(t))
+    t = cp.pr2(t)
 ```
 
