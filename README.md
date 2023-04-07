@@ -5,7 +5,7 @@ Ancillary project for a forthcoming initiative.
 Implements (a slight variant of) the Cantor pairing function 
 and its projections.
 
-Not pip-installable as of today. Download the source. File src/cantorpairs.py suffices.
+Not pip-installable as of today. Download the source. File `src/cantorpairs.py` suffices.
 
 Following relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
 
@@ -22,8 +22,8 @@ contains the examples given below.
 
 (Dotted) Pair formation (a.k.a. `cons` to Lispers) is `dp(x, y)`. 
 The inverses are the left and right projections `pr_l` (an ell, 
-not number 1) and `pr_r`, extended to map to zero for input zero. 
-Thus `dp(pr_l(x), pr_r(x)) == x` if `x != 0`.
+for **l**eft, not number 1) and `pr_r` (for **r**ight), extended 
+to map to zero for input zero. Thus `dp(pr_l(x), pr_r(x)) == x` if `x != 0`.
 
 According to <https://import-as.github.io/>, it is infrequent that
 packages are imported `as cp`; the ones that do are `cvxpy`, `copy`,
