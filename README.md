@@ -15,7 +15,7 @@ To this end, the natural number zero is used as "nil" and the
 dotted pair is a bijection between `NxN` and `N-{0}`. The formulas
 have been adapted slightly to obtain this bijection.
 
-Functions are defined in file cantorpairs.py whereas file cp_ex.py 
+Functions are defined in file `cantorpairs.py` whereas file `cp_ex.py` 
 contains the examples given below.
 
 ### Pairing examples
