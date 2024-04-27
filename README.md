@@ -1,7 +1,7 @@
 # cantorpairs
 ## (Almost) Cantor pairing and extension to tupling
 
-Ancillary project for a forthcoming initiative. 
+Ancillary project for the related initiative PReFScript. 
 Implements (a slight variant of) the Cantor pairing function 
 and its projections.
 
@@ -21,9 +21,13 @@ contains the examples given below.
 ### Pairing examples
 
 (Dotted) Pair formation (a.k.a. `cons` to Lispers) is `dp(x, y)`. 
-The inverses are the left and right projections `pr_l` (an ell, 
-for **l**eft, not number 1) and `pr_r` (for **r**ight), extended 
-to map to zero for input zero. Thus `dp(pr_l(x), pr_r(x)) == x` if `x != 0`.
+The inverses are the left and right projections `pr_L` (for **L**eft)
+and `pr_R` (for **R**ight), extended to map to zero for input zero. 
+Thus, `dp(pr_L(x), pr_R(x)) == x` if `x != 0`.
+
+Early versions of these sources used `pr_l` (an ell, for **l**eft)
+which was easily confused with number 1. Currently both projections
+are marked with upper case `L` and (accordingly) `R`.
 
 According to <https://import-as.github.io/>, it is infrequent that
 packages are imported `as cp`; the ones that do are `cvxpy`, `copy`,
@@ -40,7 +44,7 @@ for i in range(4):
     print(i, j, cp.dp(i, j))
 
 for i in range(90, 100):
-  print(cp.pr_l(i), cp.pr_r(i), cp.dp(cp.pr_l(i), cp.pr_r(i)), i) 
+  print(cp.pr_L(i), cp.pr_R(i), cp.dp(cp.pr_L(i), cp.pr_R(i)), i) 
 ```
 
 ### Tupling exemples
@@ -53,7 +57,7 @@ There are two functions that form tuples: in one, `tup_e`,
 the arguments are **e**xplicitly integers, an arbitrary number 
 of them. In the other, `tup_i`, the single argument is an 
 **i**terable of integers. We can extract values from tuples 
-(besides using `pr_l` and `pr_r`) with the suffix tuple function 
+(besides using `pr_L` and `pr_R`) with the suffix tuple function 
 `s_tup(t, k)` that discards the first `k` components and returns 
 the tuple starting at position `k` (counting from zero) and the 
 general projection function `pr(t, k)` that retrieves the component 
@@ -71,12 +75,16 @@ for i in range(3):
     print(cp.pr(st, i))
 
 while t:
-    print(t, cp.pr1(t))
-    t = cp.pr2(t)
+    print(t, cp.pr_L(t))
+    t = cp.pr_R(t)
 
 t = cp.tup_i(range(8, 16))
 while t:
-    print(t, cp.pr1(t))
-    t = cp.pr2(t)
+    print(t, cp.pr_L(t))
+    t = cp.pr_R(t)
+
 ```
+
+
+
 
