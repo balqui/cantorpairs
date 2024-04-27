@@ -2,7 +2,7 @@
 Author: Jose L Balcazar, ORCID 0000-0003-4248-4528, april 2023 onwards 
 Copyleft: MIT License (https://en.wikipedia.org/wiki/MIT_License)
 
-First steps towards a Partial Recursive Functions lab.
+Ancillary functions for the Partial Recursive Functions lab.
 
 Pair / unpair functions adapted from https://en.wikipedia.org/wiki/Pairing_function
 '''
@@ -10,7 +10,11 @@ Pair / unpair functions adapted from https://en.wikipedia.org/wiki/Pairing_funct
 from functools import cache
 
 def _isqrt(n):
-    "int square root via binary search"
+    '''
+    int square root via binary search, own program
+    because math.sqrt fails with big numbers, e.g. the
+    decoding of dp(10, 10^17) comes out wrong.
+    '''
     def rr(n, k):
         """
         Pre: k <= sqrt(n)
@@ -31,10 +35,7 @@ def _isqrt(n):
 
 @cache
 def _unpair(z):
-    '''
-    math.sqrt fails with big numbers, e.g. the
-    decoding of dp(10, 10^17) comes out wrong
-    '''
+    "local sq root instead of math.sqrt"
     assert z > 0
     w = (_isqrt(8*(z - 1) + 1) - 1)//2
     t = (w*w + w)//2
@@ -45,12 +46,12 @@ def _unpair(z):
 def dp(x, y):
     return ((x + y)*(x + y + 1))//2 + x + 1
 
-def pr_l(z):
+def pr_L(z):
     if z == 0:
         return 0
     return _unpair(z)[0]
 
-def pr_r(z):
+def pr_R(z):
     if z == 0:
         return 0
     return _unpair(z)[1]
@@ -88,11 +89,11 @@ def s_tup(t, k):
     if k == 0:
         "full suffix"
         return t
-    return s_tup(pr_r(t), k-1)
+    return s_tup(pr_R(t), k-1)
 
 def pr(t, k):
     '''
     projection function: get the k-th component;
     returns nonsense (probably a zero) if k too large
     '''
-    return pr_l(s_tup(t, k))
+    return pr_L(s_tup(t, k))
