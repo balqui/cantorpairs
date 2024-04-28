@@ -94,6 +94,6 @@ def s_tup(t, k):
 def pr(t, k):
     '''
     projection function: get the k-th component;
-    returns nonsense (probably a zero) if k too large
+    returns zero (meaning end of tuple) if k is too large
     '''
     return pr_L(s_tup(t, k))
