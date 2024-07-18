@@ -8,30 +8,35 @@ Pair / unpair functions adapted from https://en.wikipedia.org/wiki/Pairing_funct
 '''
 
 from functools import cache
+from math import isqrt
 
+@cache
 def _isqrt(n):
-    '''
-    int square root via binary search, own program
-    because math.sqrt fails with big numbers, e.g. the
-    decoding of dp(10, 10^17) comes out wrong.
-    '''
-    def rr(n, k):
-        """
-        Pre: k <= sqrt(n)
-        Post: a <= sqrt(n) < b and b - a = k
-        """
-        if 4*k*k > n:
-            return k, 2*k
-        a, b = rr(n, 2*k)
-        m = (a + b)//2 # m = a + k
-        if m*m <= n:
-            return m, b
-        else:
-            return a, m
-    assert n >= 0
-    if n == 0:
-        return 0
-    return rr(n, 1)[0]
+	return isqrt(n)
+
+# ~ def _isqrt(n):
+    # ~ '''
+    # ~ int square root via binary search, own program
+    # ~ because math.sqrt fails with big numbers, e.g. the
+    # ~ decoding of dp(10, 10^17) comes out wrong.
+    # ~ '''
+    # ~ def rr(n, k):
+        # ~ """
+        # ~ Pre: k <= sqrt(n)
+        # ~ Post: a <= sqrt(n) < b and b - a = k
+        # ~ """
+        # ~ if 4*k*k > n:
+            # ~ return k, 2*k
+        # ~ a, b = rr(n, 2*k)
+        # ~ m = (a + b)//2 # m = a + k
+        # ~ if m*m <= n:
+            # ~ return m, b
+        # ~ else:
+            # ~ return a, m
+    # ~ assert n >= 0
+    # ~ if n == 0:
+        # ~ return 0
+    # ~ return rr(n, 1)[0]
 
 @cache
 def _unpair(z):
