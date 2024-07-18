@@ -3,9 +3,15 @@
 
 Ancillary project for the related initiative PReFScript. 
 Implements (a slight variant of) the Cantor pairing function 
-and its projections.
+and its projections. 
 
-Not pip-installable as of today. Download the source. File `src/cantorpairs.py` suffices.
+Project started: mid Germinal 2003.
+Current version: 0.3, early Thermidor 2024.
+
+Not pip-installable as of today. Handled as a Git submodule
+of the `prefscript` repo. If you need to use it standalone,
+feel free to download the source and put it where your `python`
+can see it. File `src/cantorpairs.py` suffices.
 
 Following relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
 
@@ -33,7 +39,8 @@ According to <https://import-as.github.io/>, it is infrequent that
 packages are imported `as cp`; the ones that do are `cvxpy`, `copy`,
 `cupy` and `chaospy`: there is no consensus and most of these 
 packages are unlikely to be used in the same project as `cantorpairs`.
-Hence I `import cantorpairs as cp` and suggest importing as `cpt`
+Hence the user project `prefscript` runs a command `import cantorpairs as cp`
+and I suggest to maintain that shorthand when possible, while importing as `cpt`
 (for "Cantor pairs and tuples") in case of conflict.
 
 ```

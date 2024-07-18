@@ -2,13 +2,26 @@
 Author: Jose L Balcazar, ORCID 0000-0003-4248-4528, april 2023 onwards 
 Copyleft: MIT License (https://en.wikipedia.org/wiki/MIT_License)
 
-Ancillary functions for the Partial Recursive Functions lab.
+Ancillary functions for PReFScript, the Partial Recursive Functions lab.
 
-Pair / unpair functions adapted from https://en.wikipedia.org/wiki/Pairing_function
+Implements a slight variant of Cantor's pair / unpair functions;
+adapted from `https://en.wikipedia.org/wiki/Pairing_function`
+The dotted pair is a bijection between `NxN` and `N-{0}`:
+the natural number zero is used as "nil".
+
+Project started: mid Germinal 2003.
+Current version: 0.2, early Thermidor 2024.
+Not pip-installable as of today. See README at `https://github.com/balqui/cantorpairs`
+
+After each push, the following extra incantation is most likely 
+necessary in the local copy of the git repo for `prefscript`:
+`git submodule update --remote`
 '''
 
 from functools import cache
 from math import isqrt
+
+__version__ = "0.3"
 
 @cache
 def _isqrt(n):
