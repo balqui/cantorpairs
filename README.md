@@ -1,7 +1,8 @@
 # cantorpairs
 ## (Almost) Cantor pairing and extension to tupling
 
-Ancillary project for the related initiative PReFScript. 
+Ancillary project for the related initiative PReFScript
+(<https://github.com/balqui/prefscript>).
 Implements (a slight variant of) the Cantor pairing function 
 and its projections. 
 
