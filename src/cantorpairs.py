@@ -1,5 +1,10 @@
 '''
-Author: Jose L Balcazar, ORCID 0000-0003-4248-4528, april 2023 onwards 
+Project started: mid Germinal 2023.
+Current version: 1.0, early Fructidor 2024.
+Not pip-installable as of today. 
+See README at `https://github.com/balqui/cantorpairs`.
+
+Author: Jose L Balcazar, ORCID 0000-0003-4248-4528 
 Copyleft: MIT License (https://en.wikipedia.org/wiki/MIT_License)
 
 Ancillary functions for PReFScript, the Partial Recursive Functions lab.
@@ -9,10 +14,6 @@ adapted from `https://en.wikipedia.org/wiki/Pairing_function`
 The dotted pair is a bijection between `NxN` and `N-{0}`:
 the natural number zero is used as "nil".
 
-Project started: mid Germinal 2003.
-Current version: 0.2, early Thermidor 2024.
-Not pip-installable as of today. See README at `https://github.com/balqui/cantorpairs`
-
 After each push, the following extra incantation is most likely 
 necessary in the local copy of the git repo for `prefscript`:
 `git submodule update --remote`
@@ -21,7 +22,7 @@ necessary in the local copy of the git repo for `prefscript`:
 from functools import cache
 from math import isqrt
 
-__version__ = "0.3"
+__version__ = "1.0"
 
 @cache
 def _isqrt(n):
@@ -115,3 +116,12 @@ def pr(t, k):
     returns zero (meaning end of tuple) if k is too large
     '''
     return pr_L(s_tup(t, k))
+
+def seq(z):
+    "list form of the sequence encoded by z"
+    ls = list()
+    while z != 0:
+        ls.append(pr_L(z))
+        z = pr_R(z)
+    return ls
+
