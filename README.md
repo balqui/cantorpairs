@@ -7,12 +7,12 @@ Implements (a slight variant of) the Cantor pairing function
 and its projections. 
 
 Project started: mid Germinal 2003.
-Current version: 0.3, early Thermidor 2024.
+Current version: 1.0, early Fructidor 2026.
 
 Not pip-installable as of today. Handled as a Git submodule
 of the `prefscript` repo. If you need to use it standalone,
 feel free to download the source and put it where your `python`
-can see it. File `src/cantorpairs.py` suffices.
+can see it. File `src/cantorpairs.py` probably suffices.
 
 Following relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
 
@@ -93,6 +93,12 @@ while t:
 
 ```
 
+Additionally, exposes function `seq()` that interprets its
+argument as a sequence of arbitrary length and returns 
+that sequence as a Python list:
 
+```
+print(cp.seq(54321)
+```
 
 

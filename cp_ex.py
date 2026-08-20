@@ -7,7 +7,7 @@ Ancillary functions for the Partial Recursive Functions lab.
 Examples of usage of pairing and tupling.
 '''
 
-import cantorpairs as cp
+import src.cantorpairs as cp
 
 for i in range(4):
   for j in range(4):
@@ -35,4 +35,8 @@ while t:
     print(t, cp.pr_L(t))
     t = cp.pr_R(t)
 
+cp.Ensure().that('a' == 'a', "'a' is OK")
+z = 54321
+print(f"Sequence {z} is {cp.seq(z)}")
+cp.Ensure().that('a' == 'b', "'a' is not 'b'")
 
