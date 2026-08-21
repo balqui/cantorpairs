@@ -22,41 +22,18 @@ necessary in the local copy of the git repo for `prefscript`:
 '''
 
 from functools import cache
-from math import isqrt
+from math import isqrt       # instead of math.sqrt
 
 __version__ = "1.0"
 
 @cache
 def _isqrt(n):
-	return isqrt(n)
-
-# ~ def _isqrt(n):
-    # ~ '''
-    # ~ int square root via binary search, own program
-    # ~ because math.sqrt fails with big numbers, e.g. the
-    # ~ decoding of dp(10, 10^17) comes out wrong.
-    # ~ '''
-    # ~ def rr(n, k):
-        # ~ """
-        # ~ Pre: k <= sqrt(n)
-        # ~ Post: a <= sqrt(n) < b and b - a = k
-        # ~ """
-        # ~ if 4*k*k > n:
-            # ~ return k, 2*k
-        # ~ a, b = rr(n, 2*k)
-        # ~ m = (a + b)//2 # m = a + k
-        # ~ if m*m <= n:
-            # ~ return m, b
-        # ~ else:
-            # ~ return a, m
-    # ~ assert n >= 0
-    # ~ if n == 0:
-        # ~ return 0
-    # ~ return rr(n, 1)[0]
+    "Formerly used to switch between various sqrt programs"
+    return isqrt(n)
 
 @cache
 def _unpair(z):
-    "local sq root instead of math.sqrt"
+    "uses local sq root"
     assert z > 0
     w = (_isqrt(8*(z - 1) + 1) - 1)//2
     t = (w*w + w)//2

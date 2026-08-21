@@ -12,7 +12,8 @@ Current version: 1.0, early Fructidor 2026.
 Not pip-installable as of today. Handled as a Git submodule
 of the `prefscript` repo. If you need to use it standalone,
 feel free to download the source and put it where your `python`
-can see it. File `src/cantorpairs.py` probably suffices.
+can see it. File `src/cantorpairs/cantorpairs_src.py` probably 
+suffices.
 
 Following relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
 
@@ -22,8 +23,11 @@ To this end, the natural number zero is used as "nil" and the
 dotted pair is a bijection between `NxN` and `N-{0}`. The formulas
 have been adapted slightly to obtain this bijection.
 
-Functions are defined in file `cantorpairs.py` whereas file `cp_ex.py` 
-contains the examples given below.
+Functions are defined in file `cantorpairs_src.py` whereas file 
+`cp_ex.py` contains the examples given below. The `__init__` file
+in the upper folder allows one to import functions from outside.
+Compare `cp_ex.py` and `cp_ex_alt.py` to see how to import the 
+exposed functions in each case.
 
 ### Pairing examples
 
@@ -38,11 +42,11 @@ are marked with upper case `L` and (accordingly) `R`.
 
 According to <https://import-as.github.io/>, it is infrequent that
 packages are imported `as cp`; the ones that do are `cvxpy`, `copy`,
-`cupy` and `chaospy`: there is no consensus and most of these 
-packages are unlikely to be used in the same project as `cantorpairs`.
-Hence the user project `prefscript` runs a command `import cantorpairs as cp`
-and I suggest to maintain that shorthand when possible, while importing as `cpt`
-(for "Cantor pairs and tuples") in case of conflict.
+`cupy` and `chaospy`: there is no consensus and most of these packages 
+are unlikely to be used in the same project as `cantorpairs`. Hence, 
+the user project `prefscript` runs a command `import cantorpairs as cp`
+and I suggest to maintain that shorthand when possible, while importing 
+as `cpt` (for "Cantor pairs and tuples") only in case of conflict.
 
 ```
 import cantorpairs as cp
@@ -71,6 +75,9 @@ the tuple starting at position `k` (counting from zero) and the
 general projection function `pr(t, k)` that retrieves the component 
 at position `k` (again counting from zero).
 
+Conversely, `seq(z)` iterates enough so as to unpack the sequence
+encoded by `z` and return it in the form of a Python list.
+
 ```
 t = cp.tup_e(4, 7, 56, 101)
 for i in range(5):
@@ -82,6 +89,10 @@ print(st)
 for i in range(3):
     print(cp.pr(st, i))
 
+print(cp.seq(54321)
+
+print(t, cp.seq(t))
+
 while t:
     print(t, cp.pr_L(t))
     t = cp.pr_R(t)
@@ -92,13 +103,3 @@ while t:
     t = cp.pr_R(t)
 
 ```
-
-Additionally, exposes function `seq()` that interprets its
-argument as a sequence of arbitrary length and returns 
-that sequence as a Python list:
-
-```
-print(cp.seq(54321)
-```
-
-
