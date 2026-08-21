@@ -26,3 +26,5 @@ class Ensure:
     def that(cls, assertion, message):
         if not assertion:
             raise cls.Failed(message)
+
+ensure = Ensure()
