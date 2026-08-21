@@ -14,6 +14,8 @@ adapted from `https://en.wikipedia.org/wiki/Pairing_function`
 The dotted pair is a bijection between `NxN` and `N-{0}`:
 the natural number zero is used as "nil".
 
+See files cp_ex*.py for usage examples.
+
 After each push, the following extra incantation is most likely 
 necessary in the local copy of the git repo for `prefscript`:
 `git submodule update --remote`

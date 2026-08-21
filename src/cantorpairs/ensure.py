@@ -11,13 +11,12 @@ Copyleft: MIT License (https://en.wikipedia.org/wiki/MIT_License)
 Ancillary functions for PReFScript, the Partial Recursive Functions lab.
 
 Implements a variant of "assert" that is not disabled from the command line.
+See files cp_ex*.py for usage examples.
 
 After each push, the following extra incantation is most likely 
 necessary in the local copy of the git repo for `prefscript`:
 `git submodule update --remote`
 '''
-
-class Failed(Exception): pass
 
 class Ensure:
 
