@@ -4,30 +4,32 @@
 Ancillary project for the related initiative PReFScript
 (<https://github.com/balqui/prefscript>).
 Implements (a slight variant of) the Cantor pairing function 
-and its projections. 
+and its projections. See the example at the end of this file
+for a quick review.
 
 Project started: mid Germinal 2003.
 Current version: 1.0, early Fructidor 2026.
 
 Not pip-installable as of today. Handled as a Git submodule
 of the `prefscript` repo. If you need to use it standalone,
-feel free to download the source and put it where your `python`
-can see it. File `src/cantorpairs/cantorpairs_src.py` probably 
-suffices.
+feel free to download the source or clone the repo and then
+put it where your `python` can see it. 
+File `src/cantorpairs/cantorpairs_src.py` probably suffices.
 
-Following relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
-
-Differences: Pairs will work like dotted pairs in creating tuples, 
-so a "nil" is necessary (cf. <https://en.wikipedia.org/wiki/Cons>).
-To this end, the natural number zero is used as "nil" and the 
-dotted pair is a bijection between `NxN` and `N-{0}`. The formulas
-have been adapted slightly to obtain this bijection.
+Follows relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
+with a slight difference: Pairs will work like dotted pairs 
+in creating tuples, hence a `nil` notion is necessary 
+(cf. <https://en.wikipedia.org/wiki/Cons>).
+To this end, the natural number zero is used as `nil` and the 
+dotted pair is a bijection between `N x N` and `N - {0}`. 
+The formulas have been adapted slightly to obtain this bijection.
 
 Functions are defined in file `cantorpairs_src.py` whereas file 
 `cp_ex.py` contains the examples given below. The `__init__` file
 in the upper folder allows one to import functions from outside.
 Compare `cp_ex.py` and `cp_ex_alt.py` to see how to import the 
-exposed functions in each case.
+exposed functions in each case. This repo contains also right now
+an `Ensure` class left undocumented _on purpose_.
 
 ### Pairing examples
 
