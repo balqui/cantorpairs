@@ -1,6 +1,6 @@
 '''
 Project started: mid Germinal 2023.
-Current version: 1.0, early Fructidor 2024.
+Current version: 1.2, late Fructidor 2026.
 Not pip-installable as of today. 
 See README at `https://github.com/balqui/cantorpairs`.
 
@@ -24,7 +24,7 @@ necessary in the local copy of the git repo for `prefscript`:
 from functools import cache
 from math import isqrt       # instead of math.sqrt
 
-__version__ = "1.0"
+__version__ = "1.2"
 
 @cache
 def _isqrt(n):
@@ -95,6 +95,12 @@ def pr(t, k):
     returns zero (meaning end of tuple) if k is too large
     '''
     return pr_L(s_tup(t, k))
+
+def proj(t, k):
+    '''
+    projection function, alternative name
+    '''
+    return pr(t, k)
 
 def seq(z):
     "list form of the sequence encoded by z"
