@@ -1,6 +1,7 @@
 '''
 Project started: mid Germinal 2023.
-Current version: 1.2, late Fructidor 2026.
+Current version: probably 1.3, early Brumaire 2026, 
+  but see __version__ in __init__.py to be sure
 Not pip-installable as of today. 
 See README at `https://github.com/balqui/cantorpairs`.
 
@@ -24,7 +25,7 @@ necessary in the local copy of the git repo for `prefscript`:
 from functools import cache
 from math import isqrt       # instead of math.sqrt
 
-__version__ = "1.2"
+# ~ __version__ = ... moved to __init__.py
 
 @cache
 def _isqrt(n):

@@ -3,12 +3,17 @@
 
 Ancillary project for the related initiative PReFScript
 (<https://github.com/balqui/prefscript>).
+Project started: mid Germinal 2003.
+Current version: probably 1.3, early Brumaire 2026, 
+
 Implements (a slight variant of) the Cantor pairing function 
 and its projections. See the example at the end of this file
 for a quick review.
 
-Project started: mid Germinal 2003.
-Current version: 1.0, early Fructidor 2026.
+Provides as well an Exception-based variant of "assert" that 
+is not disabled from the command line: call 
+  ensure.that(assertion, "message")
+to resort to it.
 
 Not pip-installable as of today. Handled as a Git submodule
 of the `prefscript` repo. If you need to use it standalone,
