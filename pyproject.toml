@@ -27,4 +27,4 @@ dependencies = [ ]
 where = ["src"]
 
 [tool.setuptools.dynamic]
-version = {attr = "your_package_name.__version__"}
+version = {attr = "cantorpairs.__version__"}
