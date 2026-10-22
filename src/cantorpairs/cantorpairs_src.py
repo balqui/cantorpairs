@@ -1,6 +1,6 @@
 '''
 Project started: mid Germinal 2023.
-Current version: probably 1.3, early Brumaire 2026, 
+Current version: probably 1.3.1, early Brumaire 2026, 
   but see __version__ in __init__.py to be sure
 Not pip-installable as of today. 
 See README at `https://github.com/balqui/cantorpairs`.

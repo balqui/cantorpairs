@@ -1,10 +1,12 @@
 # cantorpairs
 ## (Almost) Cantor pairing and extension to tupling
 
-Ancillary project for the related initiative PReFScript
-(<https://github.com/balqui/prefscript>).
+Ancillary project for the related initiative PReFScript.
+
+See [`https://github.com/balqui/prefscript`](https://github.com/balqui/prefscript)
+for further information.
 Project started: mid Germinal 2003.
-Current version: probably 1.3, early Brumaire 2026, 
+Current version: probably 1.3.1, early Brumaire 2026, 
 
 Implements (a slight variant of) the Cantor pairing function 
 and its projections. See the example at the end of this file
@@ -15,16 +17,25 @@ is not disabled from the command line: call
   ensure.that(assertion, "message")
 to resort to it.
 
-Not pip-installable as of today. Handled as a Git submodule
-of the `prefscript` repo. If you need to use it standalone,
-feel free to download the source or clone the repo and then
-put it where your `python` can see it. 
-File `src/cantorpairs/cantorpairs_src.py` probably suffices.
+No previous version was ever pip-installable; instead,
+these programs were handled as a Git submodule of the 
+`prefscript` repo and one would download the source or 
+clone the repo when in need of using it standalone.
+However, this structure led to considerable headaches
+in making installable a fully correct version of
+`prefscript` and for the coming versions the decision
+was to employ `cantorpairs` as a standard dependency,
+which requires upload to PyPI: this is the version
+that has that goal. A number of ideas (see Issues)
+also suggest that this module might grow in the near
+future, along its way to fulfill Greenspun's tenth rule.
 
-Follows relatively closely <https://en.wikipedia.org/wiki/Pairing_function>
+Follows relatively closely 
+[`https://en.wikipedia.org/wiki/Pairing_function`](https://en.wikipedia.org/wiki/Pairing_function)
 with a slight difference: Pairs will work like dotted pairs 
 in creating tuples, hence a `nil` notion is necessary 
-(cf. <https://en.wikipedia.org/wiki/Cons>).
+(cf. 
+[`https://en.wikipedia.org/wiki/Cons`](https://en.wikipedia.org/wiki/Cons)).
 To this end, the natural number zero is used as `nil` and the 
 dotted pair is a bijection between `N x N` and `N - {0}`. 
 The formulas have been adapted slightly to obtain this bijection.
@@ -47,7 +58,9 @@ Early versions of these sources used `pr_l` (an ell, for **l**eft)
 which was easily confused with number 1. Currently both projections
 are marked with upper case `L` and (accordingly) `R`.
 
-According to <https://import-as.github.io/>, it is infrequent that
+According to 
+[`https://import-as.github.io`](https://import-as.github.io), 
+it is infrequent that
 packages are imported `as cp`; the ones that do are `cvxpy`, `copy`,
 `cupy` and `chaospy`: there is no consensus and most of these packages 
 are unlikely to be used in the same project as `cantorpairs`. Hence, 
@@ -80,7 +93,8 @@ of them. In the other, `tup_i`, the single argument is an
 `s_tup(t, k)` that discards the first `k` components and returns 
 the tuple starting at position `k` (counting from zero) and the 
 general projection function `pr(t, k)` that retrieves the component 
-at position `k` (again counting from zero).
+at position `k` (again counting from zero). If `k` is too large,
+`pr(t, k)` returns zero (and it is not a bug but a feature).
 
 Conversely, `seq(z)` iterates enough so as to unpack the sequence
 encoded by `z` and return it in the form of a Python list.
