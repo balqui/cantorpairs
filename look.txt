@@ -23,6 +23,7 @@ From prefscript:
 From script (offers my/rec/trec):
   cp.dp, cp.pr_L, cp.pr_R
   loop z += 1 or similar in mu and c-of-v
+  also 0 as empty sequence
 
 
 
