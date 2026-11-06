@@ -5,7 +5,7 @@ Ancillary project for the related initiative PReFScript.
 
 See [`https://github.com/balqui/prefscript`](https://github.com/balqui/prefscript)
 for further information.
-Project started: mid Germinal 2003.
+Project started: mid Germinal 2023.
 Current version: probably 1.3.1, early Brumaire 2026, 
 
 Implements (a slight variant of) the Cantor pairing function 
