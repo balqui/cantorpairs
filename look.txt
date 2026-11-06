@@ -1,0 +1,30 @@
+('ensure' not recorded)
+
+From ascii7io:
+  no usage of cantorpairs
+  str2int, int2raw_str, int2str
+
+From basicfun:
+  cp.dp, cp.s_tup, cp.pr_R, cp.pr_L, cp.pr
+  (lambda x:) 1
+  +, *, -, max
+
+From fundata:
+  str2int
+  cp.dp
+  mu/rec/trec
+
+From gnums:
+  cp.pr_L, cp.pr_R, cp.dp
+
+From prefscript:
+  cp.dp, cp.tup_i (en --read's)
+
+From script (offers my/rec/trec):
+  cp.dp, cp.pr_L, cp.pr_R
+  loop z += 1 or similar in mu and c-of-v
+
+
+
+El resto no importan cantorpairs o sólo traen ensure
+
